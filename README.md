@@ -14,6 +14,26 @@ Our primary use case is King County Metro, a local transit agency that operates 
 
 As is, there is a sparsity in clean and open-source data from in-application battery packs. Parsing, cataloging, and analyzing the data collected from King County Metro’s large hybrid-electric bus fleet is useful work to the research and development community. This can aid in developing more efficient battery management systems, improved battery designs, and optimized usage strategies. For academic researchers, it provides a solid foundation for theoretical studies and innovations in battery technology, supporting advancements in energy storage solutions and sustainability.
 
+## Installation
+
+### Instructions
+
+The "alfred" package was designed using Ubuntu 22.4 for Windows and Terminal for MAC and therefore is required when running the package. To properly install the dependencies for this package first clone this repository into your local machine. Then, create a new environment to make sure your machine has all the required dependencies to run "alfred" with the following command:
+###
+    conda env create -f environment.yml
+
+Activate this environment using:
+###
+    conda activate alfred
+
+Finally, to finish installation using python, input:
+###
+        python
+        import alfred
+
+
+
+
 ## Component Design
 
 ### Extract, Transform, Load (etl.py)
@@ -29,6 +49,34 @@ Our vis.py module is designed for exploring through the previously organized fol
 Lastly, our analysis.py module offers a suite of tools for conducting Principal Component Analysis (PCA) on built data frames, currently supporting voltage analysis at the module level. With features including normalization through mean centering, visualization of explained variance to aid in component selection, plotting of principle component loadings, and scatterplot visualization of data points in terms of the first two principle components, it provides users with powerful analytical capabilities. Several checks are in place to ensure the accuracy and integrity of the analysis, offering confidence in the results obtained.
 
 ## Architecture
+###
+    TheBattmobile/                                    
+    ├── alfred/                         # imported software package
+    │   ├── etl.py                         # extract, order, and sort data
+    │   ├── vis.py                         # builds dataframes and visualizes data                                            
+    │   ├── analysis.py                    # runs PCA 
+    │   ├── data/
+    │   │   ├── test_data.zip             
+    │   │   ├── KCM-Raw-Data.zip           # actual data from KCM hybrid buses
+    │   │   ├── sorted_test_data/
+    │   │   ├── unsorted_test_data/
+    │   │   │   └── incomplete/
+    │   │   └── unzipped_test_data/
+    │   └── tests/                        # unuttests for modules
+    │       ├──test_vis.py
+    │       ├──test_analysis.py
+    │       └──test_etl.py
+    ├── examples/
+    │   ├── Example_notebook.ipynbb      # walk through of the diiferent functions alfred has to offer
+    │   └── example_data/
+    │       └── KCM-Raw-Data.zip         # actual data from KCM hybrid buses
+    └── doc/
+        ├── diagram_battery layout.pdf
+        ├── CHEME 546 final presentation.pdf
+        └── Component Specs/
+            ├── Data_Breakdown.md       # explanation of the bus csv data
+            └── Use_Cases.md
+
 
 
 
