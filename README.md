@@ -20,7 +20,7 @@ As is, there is a sparsity in clean and open-source data from in-application bat
 
 The "alfred" package was designed using Ubuntu 22.4 for Windows and Terminal for MAC and therefore is required when running the package. To properly install the dependencies for this package first clone this repository into your local machine. Then, create a new environment to make sure your machine has all the required dependencies to run "alfred" with the following command:
 ###
-    conda env create -f environment.yml
+    conda env create -f gotham.yml
 
 Activate this environment using:
 ###
@@ -63,23 +63,18 @@ Lastly, our analysis.py module offers a suite of tools for conducting Principal 
     │   │   │   └── incomplete/
     │   │   └── unzipped_test_data/
     │   └── tests/                        # unuttests for modules
-    │       ├──test_vis.py
-    │       ├──test_analysis.py
-    │       └──test_etl.py
+    │       ├── test_vis.py
+    │       ├── test_analysis.py
+    │       └── test_etl.py
     ├── examples/
     │   ├── Example_notebook.ipynbb      # walk through of the diiferent functions alfred has to offer
-    │   └── example_data/
-    │       └── KCM-Raw-Data.zip         # actual data from KCM hybrid buses
+    │   ├── example_data/
+    │   │   └── KCM-Raw-Data.zip         
+    │   ├── Healthy vs Non-healthy busses.ipynb 
+    │   └── Module time time of Failure.ipynb
     └── doc/
         ├── diagram_battery layout.pdf
         ├── CHEME 546 final presentation.pdf
         └── Component Specs/
             ├── Data_Breakdown.md       # explanation of the bus csv data
             └── Use_Cases.md
-
-
-
-
-## Contributing
-
-
